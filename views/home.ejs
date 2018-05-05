@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CloudForce</title>
+
+    <style type="text/css"></style>
+
+    <link rel="stylesheet" href="/public/home.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet">
+</head>
+<body>
+
+<!-- <h1>MAMA</h1> -->
+
+<div class="container px-5 py-3">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img class="logo-left"
+                 src="/images/logo3.png"
+                 alt="Freelancer Logo"
+                 data-display="block">
+
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-auto style-font-header">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/menu">View Menus</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/cart">View Cart</a>
+                </li>
+                <% if(logged != 'yes'){ %>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/signup">Create Account</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <% } %>
+            </ul>
+            <!-- <span class="navbar-text">
+                Navbar text with an inline element
+            </span> -->
+        </div>
+
+    </nav>
+
+    <% if (typeof username != "undefined") { %>
+    <!-- make user available to script tag -->
+    <% var user = username %>
+
+    <!-- use script tag to access ejs data and local storage -->
+    <script>
+        var user1 = <% user %>
+            localStorage.setItem('info', JSON.stringify(
+                {'user': user1}
+            ));
+    </script>
+    <% } %>
+
+    <img src="../images/back.jpg" class="image-background mt-3">
+
+    <form id="frmGetStarted" class="top-left px-4 pt-2" action="/vendor/search" method="get">
+        <h1 style="font-weight: 900; font-size: 50px">GET STARTED!</h1>
+
+
+        <div class="form-group row">
+            <label for="StreetAddress"><h5 style="font-weight: 800">&nbsp&nbsp&nbspEnter your zip code or city and
+                    state:</h5></label>
+            <input type="text" class="form-control col-md-8 m-2" id="exampleInputEmail1" id="StreetAddress"
+                   name="StreetAddress" placeholder="Street address or zip code"
+                   aria-label="Enter street address or zip code">
+            <button type="submit" id="frmGetStartedSubmit" class="btn btn-primary col-md-2 m-2">Go</button>
+        </div>
+
+        <!-- <input type="hidden" name="mode" value="Order"> -->
+
+    </form>
+
+
+    <br/>
+
+    <div id="brand-bar">
+
+        <nav class="text-right">
+            <a href="">Participating Locations </a> |
+            <a href="">User Agreement</a> |
+            <a href="">Privacy Policy</a> |
+            <a href="">Feedback</a> |
+            <a href="">Contact Us</a> |
+
+        </nav>
+    </div>
+
+</div>
+</body>
+</html>

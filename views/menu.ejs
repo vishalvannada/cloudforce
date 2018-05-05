@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CloudForce</title>
+
+    <style type="text/css"></style>
+
+    <link rel="stylesheet" href="/public/home.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet">
+</head>
+<body>
+
+<!-- <h1>MAMA</h1> -->
+
+<div class="container px-5 py-3">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img class ="logo-left"
+                 src="/images/logo3.png"
+                 alt="Freelancer Logo"
+                 data-display="block">
+
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-auto style-font-header">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/menu">View Menus</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/cart">View Cart</a>
+                </li>
+                <% if(logged !='yes'){ %>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/signup">Create Account</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <% } %>
+            </ul>
+            <!-- <span class="navbar-text">
+                Navbar text with an inline element
+            </span> -->
+
+
+
+        </div>
+    </nav>
+
+
+    <div id="products">
+
+        <br/>
+
+        <div class="style-font-header">
+            Burger Menu
+        </div>
+        <div class="row">
+
+
+
+            <% for(var i=0; i < data.length; i++) { %>
+
+                <div class="col-md-4 text-center">
+                    <div class="imgWrap"><img aria-hidden="true" typeof="foaf:Image" src="/images/<%=i+1%>.png" alt="Sourdough King" title="Sourdough King"></div>
+                    <div class="title style-font-normal"><p class="text-center"><%= data[i].Name%> &nbsp $<%= data[i].Price%></p></div>
+                    <a href="/order?id=<%= data[i].Id%>"><button class="m-auto btn btn-primary">Go</button></a>
+                </div>
+
+            <% } %>
+
+
+
+        </div>
+
+    </div>
+</body>
+</html>
