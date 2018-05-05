@@ -41,10 +41,13 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/menu">View Menus</a>
+                    <a class="nav-link" href="/deals">Deals</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/cart">View Cart</a>
+                    <a class="nav-link" href="/menu">Menus</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/logout">Logout</a>
                 </li>
             </ul>
             <!-- <span class="navbar-text">
@@ -63,6 +66,8 @@
         <br/>
 
         <div class='style-font-header'>CART</div>
+        <br/>
+        <br/>
 
         <% if(data){ %>
         <div class="row">
@@ -76,7 +81,7 @@
                     <% amount = amount + data[i].Price %>
 
                     <div class="col-md-4 text-center width-100">
-                        <div class="imgWrap"><img aria-hidden="true" class="width-100" typeof="foaf:Image"
+                        <div class="imgWrap"><img aria-hidden="true" class="width-100 m-3" typeof="foaf:Image"
                                                   src="/images/<%= data[i].Path %>"
                                                   alt="Sourdough King" title="Sourdough King"></div>
                         <div class="title style-font-normal"><p class="text-center"><%= data[i].Name %> <br/>

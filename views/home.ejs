@@ -42,18 +42,26 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/menu">View Menus</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/cart">View Cart</a>
-                </li>
                 <% if(logged != 'yes'){ %>
                 <li class="nav-item active">
                     <a class="nav-link" href="/signup">Create Account</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/login">Login</a>
+                </li>
+                <% } %>
+                <% if(logged == 'yes'){ %>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/deals">Deals</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/menu">Menus</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/cart">Cart</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/logout">Logout</a>
                 </li>
                 <% } %>
             </ul>
@@ -79,22 +87,22 @@
 
     <img src="../images/back.jpg" class="image-background mt-3">
 
-    <form id="frmGetStarted" class="top-left px-4 pt-2" action="/vendor/search" method="get">
-        <h1 style="font-weight: 900; font-size: 50px">GET STARTED!</h1>
+    <!--<form id="frmGetStarted" class="top-left px-4 pt-2" action="/vendor/search" method="get">-->
+        <!--<h1 style="font-weight: 900; font-size: 50px">GET STARTED!</h1>-->
 
 
-        <div class="form-group row">
-            <label for="StreetAddress"><h5 style="font-weight: 800">&nbsp&nbsp&nbspEnter your zip code or city and
-                    state:</h5></label>
-            <input type="text" class="form-control col-md-8 m-2" id="exampleInputEmail1" id="StreetAddress"
-                   name="StreetAddress" placeholder="Street address or zip code"
-                   aria-label="Enter street address or zip code">
-            <button type="submit" id="frmGetStartedSubmit" class="btn btn-primary col-md-2 m-2">Go</button>
-        </div>
+        <!--<div class="form-group row">-->
+            <!--<label for="StreetAddress"><h5 style="font-weight: 800">&nbsp&nbsp&nbspEnter your zip code or city and-->
+                    <!--state:</h5></label>-->
+            <!--<input type="text" class="form-control col-md-8 m-2" id="exampleInputEmail1" id="StreetAddress"-->
+                   <!--name="StreetAddress" placeholder="Street address or zip code"-->
+                   <!--aria-label="Enter street address or zip code">-->
+            <!--<button type="submit" id="frmGetStartedSubmit" class="btn btn-primary col-md-2 m-2">Go</button>-->
+        <!--</div>-->
 
-        <!-- <input type="hidden" name="mode" value="Order"> -->
+        <!--&lt;!&ndash; <input type="hidden" name="mode" value="Order"> &ndash;&gt;-->
 
-    </form>
+    <!--</form>-->
 
 
     <br/>

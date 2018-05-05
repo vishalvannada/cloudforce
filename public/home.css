@@ -103,3 +103,9 @@ input{
 .font-size-more{
     font-size: 30px;
 }
+
+
+.imgWrap img{
+    width: 209px;
+    height: 188px;
+}
