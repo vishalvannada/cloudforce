@@ -61,14 +61,18 @@ var handle_checklogin = function (req, res, next) {
     client.post(login + '/' + username + '/' + password,
         function (data, response_raw) {
             console.log("After LOGIN");
-            jsdata = JSON.parse(data);
 
-            if (jsdata == null) {
+            if(JSON.parse(data)){
+                jsdata = JSON.parse(data);
+                res.render('home', {logged: 'yes', username: username.toString()})
+                localStorage.setItem('user', username);
+                console.log(username);
+            }else{
                 res.render('login', {error: 'invalid', logged: 'no'})
             }
-            localStorage.setItem('user', username);
-            console.log(username);
-            res.render('home', {logged: 'yes', username: username.toString()})
+
+
+
         });
 };
 
